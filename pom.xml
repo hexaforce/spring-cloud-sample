@@ -11,6 +11,7 @@
 
 	<modules>
 		<module>netflix</module>
+		<module>config-server2</module>
 	</modules>
 
 	<properties>
