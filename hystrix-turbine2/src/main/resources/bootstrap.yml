@@ -20,7 +20,7 @@ spring:
       discovery:
         serviceId: config-server
         enabled: false
-      uri: https://localhost:8888
+      uri: http://localhost:8888
 
 eureka:
   client:
