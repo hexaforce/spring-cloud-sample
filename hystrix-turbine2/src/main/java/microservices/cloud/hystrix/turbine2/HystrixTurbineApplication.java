@@ -1,10 +1,10 @@
-package microservices.cloud.edge.server2;
+package microservices.cloud.hystrix.turbine2;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class HystrixTurbineApplication 
 {
     public static void main( String[] args )
     {

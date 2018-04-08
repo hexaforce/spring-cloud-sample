@@ -1,10 +1,10 @@
-package microservices.cloud.hystrix.turbine2;
+package microservices.cloud.hystrix.dashboard2;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class HystrixDashboardApplication 
 {
     public static void main( String[] args )
     {

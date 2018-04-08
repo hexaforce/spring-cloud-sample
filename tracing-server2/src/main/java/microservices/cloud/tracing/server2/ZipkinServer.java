@@ -4,7 +4,7 @@ package microservices.cloud.tracing.server2;
  * Hello world!
  *
  */
-public class App 
+public class ZipkinServer 
 {
     public static void main( String[] args )
     {

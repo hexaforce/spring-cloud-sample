@@ -1,10 +1,10 @@
-package microservices.cloud.hystrix.dashboard2;
+package microservices.cloud.edge.server2;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class ZuulApplication 
 {
     public static void main( String[] args )
     {
