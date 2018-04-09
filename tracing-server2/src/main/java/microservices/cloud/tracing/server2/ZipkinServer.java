@@ -2,12 +2,12 @@ package microservices.cloud.tracing.server2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import zipkin.server.internal.EnableZipkinServer;
 
 @EnableZipkinServer
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @SpringBootApplication
 public class ZipkinServer {
 
