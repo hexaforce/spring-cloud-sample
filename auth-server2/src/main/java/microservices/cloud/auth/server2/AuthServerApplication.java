@@ -1,5 +1,9 @@
 package microservices.cloud.auth.server2;
 
+import java.security.Principal;
+
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -8,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
-
-import javax.net.ssl.HttpsURLConnection;
-import java.security.Principal;
 
 @RestController
 @EnableResourceServer
@@ -28,7 +29,7 @@ public class AuthServerApplication {
 	}
 
 	public static void main(String[] args) {
-
+		
 		SpringApplication.run(AuthServerApplication.class, args);
 
 	}
