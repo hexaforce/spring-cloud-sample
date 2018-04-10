@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Controller
 @Slf4j
-@SpringBootApplication
 @EnableDiscoveryClient
+@SpringBootApplication
+
+@Controller
 @EnableHystrixDashboard
 public class HystrixDashboardApplication extends SpringBootServletInitializer {
 

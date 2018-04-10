@@ -1,6 +1,5 @@
 package microservices.cloud.config.server2;
 
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -9,20 +8,19 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import lombok.extern.slf4j.Slf4j;
 
-@EnableConfigServer
-@EnableDiscoveryClient
 @Slf4j
+@EnableDiscoveryClient
 @SpringBootApplication
+
+@EnableConfigServer
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
 
-		ConfigurableApplicationContext context = 
-				SpringApplication.run(ConfigServerApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(ConfigServerApplication.class, args);
 
-		log.info("Connected to RabbitMQ at: {}", 
-				context.getEnvironment().getProperty("spring.rabbitmq.host"));
-		
+		log.info("Connected to RabbitMQ at: {}", context.getEnvironment().getProperty("spring.rabbitmq.host"));
+
 	}
 
 }
