@@ -12,3 +12,4 @@ EurekaServer:8761
 
 ZuulServer:8765
 
+Zipkin:9411
