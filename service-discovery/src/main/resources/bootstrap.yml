@@ -1,11 +1,8 @@
-server:
-  port: 8761
 
 spring:
   application:
     name: service-discovery
 
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}

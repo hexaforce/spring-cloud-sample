@@ -16,7 +16,6 @@
 		<module>hystrix-dashboard</module>
 		<module>turbine-stream</module>
 		<module>authorization-server</module>
-		<module>config-monitor</module>
 		<module>tracing-server</module>
 	</modules>
 

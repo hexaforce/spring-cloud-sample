@@ -1,0 +1,16 @@
+info:
+  component: Zuul Server
+
+zuul:
+  routes:
+    stores: /stores/**
+    customers: /customers/**
+    zuulserver: /self/**
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
