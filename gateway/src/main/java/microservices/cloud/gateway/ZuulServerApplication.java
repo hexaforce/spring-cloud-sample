@@ -16,9 +16,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @EnableZuulProxy
 @RestController
+@SpringBootApplication
 public class ZuulServerApplication {
 
 	public static void main(String[] args) {

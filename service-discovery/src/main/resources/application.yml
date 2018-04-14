@@ -6,4 +6,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
   server:
+    # Disable self-preservation during development, see https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication
+    enableSelfPreservation: false
+    
     waitTimeInMsWhenSyncEmpty: 0
