@@ -1,7 +1,12 @@
 spring:
   application:
     name: turbine-stream
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: vagrant
+    password: vagrant
+    
 eureka:
   client:
     serviceUrl:
