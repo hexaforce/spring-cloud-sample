@@ -22,8 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ZuulServerApplication {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(ZuulServerApplication.class)
-		.web(WebApplicationType.SERVLET).run(args);
+		new SpringApplicationBuilder(ZuulServerApplication.class).web(WebApplicationType.SERVLET).run(args);
 	}
 
 	@Bean
@@ -38,7 +37,9 @@ public class ZuulServerApplication {
 
 			@Override
 			public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
+
 				return new ClientHttpResponse() {
+
 					@Override
 					public HttpStatus getStatusCode() throws IOException {
 						return HttpStatus.OK;
@@ -70,7 +71,9 @@ public class ZuulServerApplication {
 						headers.setContentType(MediaType.APPLICATION_JSON);
 						return headers;
 					}
+					
 				};
+
 			}
 
 		};
