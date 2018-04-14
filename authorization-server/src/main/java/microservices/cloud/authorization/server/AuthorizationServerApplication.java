@@ -34,24 +34,24 @@ public class AuthorizationServerApplication extends WebSecurityConfigurerAdapter
 		SpringApplication.run(AuthorizationServerApplication.class, args);
 	}
 
-	@Override
-	public void init(WebSecurity builder) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void configure(WebSecurity builder) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void init(WebSecurity builder) throws Exception {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void configure(WebSecurity builder) throws Exception {
+//		// TODO Auto-generated method stub
+//		
+//	}
 	
 //	@Override
 //	public void addViewControllers(ViewControllerRegistry registry) {
 //		registry.addViewController("/login").setViewName("login");
 //		registry.addViewController("/oauth/confirm_access").setViewName("authorize");
 //	}
-//
+
 //	@Configuration
 //	@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 //	protected static class LoginConfig extends WebSecurityConfigurerAdapter {
@@ -80,35 +80,37 @@ public class AuthorizationServerApplication extends WebSecurityConfigurerAdapter
 
 		@Bean
 		public JwtAccessTokenConverter jwtAccessTokenConverter() {
+			
 			JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+			
 			KeyPair keyPair = new KeyStoreKeyFactory(
 					new ClassPathResource("keystore.jks"), "foobar".toCharArray())
 					.getKeyPair("test");
 			converter.setKeyPair(keyPair);
+			
 			return converter;
+			
 		}
 
 		@Override
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 			clients.inMemory()
-					.withClient("acme")
-					.secret("acmesecret")
-					.authorizedGrantTypes("authorization_code", "refresh_token",
-							"password").scopes("openid");
+				.withClient("acme")
+				.secret("acmesecret")
+				.authorizedGrantTypes("authorization_code", "refresh_token", "password")
+				.scopes("openid");
 		}
 
 		@Override
-		public void configure(AuthorizationServerEndpointsConfigurer endpoints)
-				throws Exception {
-			endpoints.authenticationManager(authenticationManager).accessTokenConverter(
-					jwtAccessTokenConverter());
+		public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+			endpoints.authenticationManager(authenticationManager)
+				.accessTokenConverter(jwtAccessTokenConverter());
 		}
 
 		@Override
-		public void configure(AuthorizationServerSecurityConfigurer oauthServer)
-				throws Exception {
-			oauthServer.tokenKeyAccess("permitAll()").checkTokenAccess(
-					"isAuthenticated()");
+		public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+			oauthServer.tokenKeyAccess("permitAll()")
+				.checkTokenAccess("isAuthenticated()");
 		}
 
 	}
