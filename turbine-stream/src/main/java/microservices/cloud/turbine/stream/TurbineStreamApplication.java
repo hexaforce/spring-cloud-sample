@@ -15,9 +15,14 @@ import org.springframework.core.env.StandardEnvironment;
 public class TurbineStreamApplication {
 
 	public static void main(String[] args) {
+		
 		boolean cloudEnvironment = new StandardEnvironment().acceptsProfiles("cloud");
-		WebApplicationType webApplicationType = cloudEnvironment ? WebApplicationType.SERVLET : WebApplicationType.NONE;
+		
+		WebApplicationType webApplicationType = 
+				cloudEnvironment ? WebApplicationType.SERVLET : WebApplicationType.NONE;
+		
 		new SpringApplicationBuilder(TurbineStreamApplication.class).web(webApplicationType).run(args);
+		
 	}
 
 }
