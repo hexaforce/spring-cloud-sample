@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ZipkinBackendServer {
 
+	private final static String NAME = "--spring.application.name=";
+	private final static String PORT = "--server.port=";
+
 	@RequestMapping("/api")
 	public String printDate() {
 		return new Date().toString();
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZipkinBackendServer.class, "--spring.application.name=backend", "--server.port=9000");
+		SpringApplication.run(ZipkinBackendServer.class, NAME + "zipkin-backend", PORT + 9000);
 	}
-	
+
 }

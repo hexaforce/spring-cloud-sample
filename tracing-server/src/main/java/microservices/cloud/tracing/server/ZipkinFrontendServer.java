@@ -14,6 +14,9 @@ import org.springframework.web.client.RestTemplate;
 @CrossOrigin // So that javascript can be hosted elsewhere
 public class ZipkinFrontendServer {
 
+	private final static String NAME = "--spring.application.name=";
+	private final static String PORT = "--server.port=";
+
 	@Autowired
 	RestTemplate restTemplate;
 
@@ -28,7 +31,7 @@ public class ZipkinFrontendServer {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZipkinFrontendServer.class, "--spring.application.name=frontend", "--server.port=8081");
+		SpringApplication.run(ZipkinFrontendServer.class, NAME + "zipkin-frontend", PORT + 8081);
 	}
 	
 }
