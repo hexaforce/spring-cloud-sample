@@ -1,4 +1,4 @@
-package microservices.cloud.config.server;
+package microservices.cloud.gateway;
 
 import java.io.File;
 import java.io.FileOutputStream;

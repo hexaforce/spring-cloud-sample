@@ -1,10 +1,15 @@
 package microservices.cloud.turbine.stream;
 
+import java.io.IOException;
+
+import org.springframework.beans.BeansException;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.StandardEnvironment;
 
@@ -14,14 +19,20 @@ import org.springframework.core.env.StandardEnvironment;
 @EnableDiscoveryClient
 public class TurbineStreamApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BeansException, IOException {
 		
 		boolean cloudEnvironment = new StandardEnvironment().acceptsProfiles("cloud");
 		
 		WebApplicationType webApplicationType = 
 				cloudEnvironment ? WebApplicationType.SERVLET : WebApplicationType.NONE;
 		
-		new SpringApplicationBuilder(TurbineStreamApplication.class).web(webApplicationType).run(args);
+		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(TurbineStreamApplication.class)
+				.web(webApplicationType)
+				.listeners(new ApplicationPidFileWriter())
+				.run(args);
+		
+		context.getBean(StartupCompleteEvent.class).onComplete();
 		
 	}
 

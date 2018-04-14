@@ -1,4 +1,4 @@
-package microservices.cloud.config.server;
+package microservices.cloud.turbine.stream;
 
 import java.io.File;
 import java.io.FileOutputStream;

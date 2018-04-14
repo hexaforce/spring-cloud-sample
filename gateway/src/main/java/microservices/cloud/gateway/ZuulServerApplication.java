@@ -4,11 +4,14 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.springframework.beans.BeansException;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,8 +24,16 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class ZuulServerApplication {
 
-	public static void main(String[] args) {
-		new SpringApplicationBuilder(ZuulServerApplication.class).web(WebApplicationType.SERVLET).run(args);
+	public static void main(String[] args) throws BeansException, IOException {
+		
+		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ZuulServerApplication.class)
+				.web(WebApplicationType.SERVLET)
+				.listeners(new ApplicationPidFileWriter())
+				.run(args);
+		
+		context.getBean(StartupCompleteEvent.class).onComplete();
+		
 	}
 
 	@Bean
