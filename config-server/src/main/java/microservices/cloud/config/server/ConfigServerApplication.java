@@ -1,18 +1,30 @@
 package microservices.cloud.config.server;
 
-import org.springframework.boot.SpringApplication;
+import java.io.IOException;
+
+import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @EnableDiscoveryClient
-
 @EnableConfigServer
 @SpringBootApplication
 public class ConfigServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ConfigServerApplication.class, args);
+	public static void main(String[] args) throws BeansException, IOException {
+		
+		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ConfigServerApplication.class)
+				.listeners(new ApplicationPidFileWriter())
+				.run(args);
+		
+		context.getBean(StartupCompleteEvent.class).onComplete();
+		
 	}
-
+	
+	
 }
