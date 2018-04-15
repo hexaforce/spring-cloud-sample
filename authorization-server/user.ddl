@@ -1,6 +1,5 @@
 CREATE SCHEMA `authentication` DEFAULT CHARACTER SET utf8 ;
 
-
 DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
