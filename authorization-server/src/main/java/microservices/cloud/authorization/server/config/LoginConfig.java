@@ -1,4 +1,4 @@
-package microservices.cloud.authorization.server;
+package microservices.cloud.authorization.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

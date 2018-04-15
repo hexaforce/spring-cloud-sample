@@ -1,4 +1,4 @@
-package microservices.cloud.authorization.server;
+package microservices.cloud.authorization.server.config;
 
 import java.util.Properties;
 

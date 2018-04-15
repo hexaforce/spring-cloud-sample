@@ -1,4 +1,4 @@
-package microservices.cloud.authorization.server;
+package microservices.cloud.authorization.server.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;

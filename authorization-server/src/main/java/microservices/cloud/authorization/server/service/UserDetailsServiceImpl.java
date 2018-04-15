@@ -20,7 +20,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Transactional(readOnly = true)
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+//		JdbcDaoImpl.DEF_USERS_BY_USERNAME_QUERY;
+//		JdbcDaoImpl.DEF_AUTHORITIES_BY_USERNAME_QUERY;
+//		JdbcDaoImpl.DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY;
 		User user = userDetailsDao.findUserByUsername(username);
 		UserBuilder builder = null;
 		if (user != null) {
