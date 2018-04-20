@@ -10,12 +10,12 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<modules>
-		<module>service-discovery</module>
 		<module>config-server</module>
-		<module>gateway</module>
+		<module>service-discovery</module>
+		<module>authorization-server</module>
+		<module>gateway-proxy</module>
 		<module>hystrix-dashboard</module>
 		<module>turbine-stream</module>
-		<module>authorization-server</module>
 		<module>tracing-server</module>
 	</modules>
 
@@ -58,7 +58,7 @@
 
 	<build>
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -68,7 +68,7 @@
 					<fork>true</fork>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -96,7 +96,7 @@
 					</buildArgs>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -104,8 +104,11 @@
 				<configuration>
 					<imageName>${project.artifactId}</imageName>
 					<baseImage>openjdk:jre-alpine</baseImage>
-					<!-- copy the service's jar file from target into the root directory of the image -->
-					<entryPoint>["java", "-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom", "-jar","/${project.build.finalName}.jar"]</entryPoint>
+					<!-- copy the service's jar file from target into the root directory 
+						of the image -->
+					<entryPoint>["java",
+						"-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom",
+						"-jar","/${project.build.finalName}.jar"]</entryPoint>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -125,7 +128,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-		
+
 		<extensions>
 			<extension>
 				<groupId>org.springframework.build</groupId>
@@ -133,7 +136,7 @@
 				<version>5.0.0.RELEASE</version>
 			</extension>
 		</extensions>
-		
+
 	</build>
 
 	<repositories>

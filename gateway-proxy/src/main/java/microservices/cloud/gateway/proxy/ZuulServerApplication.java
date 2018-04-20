@@ -1,4 +1,4 @@
-package microservices.cloud.gateway;
+package microservices.cloud.gateway.proxy;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
