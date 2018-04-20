@@ -74,8 +74,8 @@
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
 			
-<!-- 
-			Requires docker login and Docker Registry
+<!-- Requires docker login and Docker Registry
+			
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
