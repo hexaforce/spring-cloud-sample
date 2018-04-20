@@ -67,7 +67,7 @@
 				<version>1.0.0</version>
 				<configuration>
 					<imageName>${project.artifactId}</imageName>
-					<baseImage>openjdk:jre-alpine</baseImage>
+					<baseImage>openjdk:alpine</baseImage>
 					<!-- copy the service's jar file from target into the root directory of the image -->
 					<entryPoint>["java","-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom","-jar","/${project.build.finalName}.jar"]</entryPoint>
 					<resources>
