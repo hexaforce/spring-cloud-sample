@@ -1,14 +1,8 @@
+## Build the Services
+docker build -t hexaforce/tracing-server . -m 1g
+
 ## Starting the Services
-In a separate tab or window, start each of [sleuth.webmvc.Frontend](/src/main/java/sleuth/webmvc/Frontend.java) and [sleuth.webmvc.Backend](/src/main/java/sleuth/webmvc/Backend.java):
-```bash
-$ export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk  
-$ mvn clean compile exec:java -Dexec.mainClass=microservices.cloud.tracing.server.ZipkinFrontendServer  
-$ mvn clean compile exec:java -Dexec.mainClass=microservices.cloud.tracing.server.ZipkinFrontendServer  
-```
+docker run -it -d -p 9411:9411 hexaforce/tracing-server
 
-Next, run [Zipkin](http://zipkin.io/), which stores and queries traces reported by the above services.
-
-```bash
-curl -sSL https://zipkin.io/quickstart.sh | bash -s
-java -jar zipkin.jar
-```
+## Push the Services
+docker push hexaforce/tracing-server

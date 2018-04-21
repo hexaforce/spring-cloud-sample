@@ -1,8 +1,10 @@
-FROM openjdk:alpine
+FROM java:alpine
 MAINTAINER Tomokazu Tantaka <relics9@gmail.com>
+
+ENV VERSION 2.7.1
 
 EXPOSE 9411
 
-ARG JAR_FILE
-ADD ${JAR_FILE} tracing-server.jar
-ENTRYPOINT ["java","-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom","-jar","/tracing-server.jar"]
+ADD zipkin.jar zipkin.jar
+
+CMD ["java", "-jar", "zipkin.jar"]
