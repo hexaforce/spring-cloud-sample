@@ -1,0 +1,42 @@
+FROM java:alpine
+MAINTAINER Tomokazu Tantaka <relics9@gmail.com>
+
+ENV VERSION 6.2.4
+
+EXPOSE 9200 9300 5601
+
+COPY elasticsearch-6.2.4 /elasticsearch
+
+COPY kibana-6.2.4-linux-x86_64 /kibana
+
+RUN mkdir /var/tmp/elasticsearch
+
+RUN chmod 777 /var/tmp/elasticsearch
+
+RUN export ES_TMPDIR=/var/tmp/elasticsearch
+
+RUN apk --no-cache add nodejs bash
+
+CMD ["bash", "-ex", "/elasticsearch/elasticsearch"]
+
+CMD ["bash", "-ex", "/kibana/kibana"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker build -t hexaforce/elasticsearch . -m 2g
