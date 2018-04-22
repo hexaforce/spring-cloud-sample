@@ -89,17 +89,17 @@
 		</extensions>
 
 	</build>
-
+	
 	<repositories>
-		<repository>
-			<id>aws-release</id>
-			<name>AWS Release Repository</name>
-			<url>s3://microservice.hexaforce.io/release</url>
-		</repository>
 		<repository>
 			<id>aws-snapshot</id>
 			<name>AWS Snapshot Repository</name>
 			<url>s3://microservice.hexaforce.io/snapshot</url>
+		</repository>
+		<repository>
+			<id>aws-release</id>
+			<name>AWS Release Repository</name>
+			<url>s3://microservice.hexaforce.io/release</url>
 		</repository>
 		<repository>
 			<id>spring-milestones</id>
