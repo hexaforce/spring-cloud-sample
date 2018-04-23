@@ -56,12 +56,11 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-cloud-version}</version>
 				<configuration>
+					<skip>true</skip>
 					<!-- LiveReloadServer's port. Set to false in production environment!! -->
 					<excludeDevtools>true</excludeDevtools>
 					<fork>true</fork>
-					<configuration>
-						<addResources>true</addResources>
-					</configuration>
+					<addResources>true</addResources>
 				</configuration>
 			</plugin>
 			<plugin>
