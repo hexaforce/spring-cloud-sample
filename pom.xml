@@ -54,7 +54,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring-cloud-version}</version>
+				<version>${spring-boot-version}</version>
 				<configuration>
 					<skip>true</skip>
 					<!-- LiveReloadServer's port. Set to false in production environment!! -->
