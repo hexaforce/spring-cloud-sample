@@ -1,4 +1,4 @@
-package microservices.cloud.config.server;
+package microservices.cloud.configuration.server;
 
 import java.io.IOException;
 
@@ -13,12 +13,12 @@ import org.springframework.context.ConfigurableApplicationContext;
 @EnableDiscoveryClient
 @EnableConfigServer
 @SpringBootApplication
-public class ConfigServerApplication {
+public class ConfigurationServerApplication {
 
 	public static void main(String[] args) throws BeansException, IOException {
 		
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
-				.sources(ConfigServerApplication.class)
+				.sources(ConfigurationServerApplication.class)
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
 		
