@@ -12,10 +12,10 @@
 	<modules>
 		<module>config-server</module>
 		<module>service-discovery</module>
-		<module>authorization-server</module>
 		<module>gateway-proxy</module>
-		<module>hystrix-dashboard</module>
+		<module>authorization-server</module>
 		<module>turbine-stream</module>
+		<module>hystrix-dashboard</module>
 	</modules>
 
 	<properties>
