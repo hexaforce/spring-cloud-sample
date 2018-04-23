@@ -29,8 +29,14 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
@@ -41,7 +47,7 @@
 
 	<build>
 		<plugins>
-
+	
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -49,14 +55,17 @@
 					<!-- LiveReloadServer's port. Set to false in production environment!! -->
 					<excludeDevtools>true</excludeDevtools>
 					<fork>true</fork>
+					<configuration>
+						<addResources>true</addResources>
+					</configuration>
 				</configuration>
 			</plugin>
-
+	
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
-
+	
 		</plugins>
 
 		<extensions>
