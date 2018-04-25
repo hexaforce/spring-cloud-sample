@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>logs/freude-univ.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<!-- daily rollover -->
-			<fileNamePattern>logs/freude-univ.%d{yyyy-MM-dd}.log</fileNamePattern>
-			<!-- keep 30 days' worth of history -->
-			<maxHistory>30</maxHistory>
-		</rollingPolicy>
-<!-- 		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> -->
-<!-- 			<MaxFileSize>100MB</MaxFileSize> -->
-<!-- 		</triggeringPolicy> -->
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>[%date][%-5level]user:%X{user}[%thread] %logger{10}\(%file:%line\) %msg%n</pattern>
-		</encoder>
-	</appender>
-	<root level="ERROR">
-		<appender-ref ref="FILE" />
-	</root>
+
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	
 <!-- 	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender"> -->
 <!-- 		<destination>127.0.0.1:9600</destination> -->
 <!-- 		<encoder class="net.logstash.logback.encoder.LogstashEncoder" /> -->
