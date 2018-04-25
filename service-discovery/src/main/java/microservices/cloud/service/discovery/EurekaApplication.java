@@ -7,6 +7,7 @@ import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import microservices.cloud.service.utile.ServiceUtileApplication;
 import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @EnableEurekaServer
@@ -16,6 +17,7 @@ public class EurekaApplication {
 	public static void main(String[] args) throws Exception {
 		
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ServiceUtileApplication.class)
 				.sources(EurekaApplication.class)
 				.web(WebApplicationType.SERVLET)
 				.listeners(new ApplicationPidFileWriter())

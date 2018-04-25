@@ -13,6 +13,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.StandardEnvironment;
 
+import microservices.cloud.service.utile.ServiceUtileApplication;
 import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @Configuration
@@ -29,6 +30,7 @@ public class TurbineStreamApplication {
 				cloudEnvironment ? WebApplicationType.SERVLET : WebApplicationType.NONE;
 		
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ServiceUtileApplication.class)
 				.sources(TurbineStreamApplication.class)
 				.web(webApplicationType)
 				.listeners(new ApplicationPidFileWriter())

@@ -19,6 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.bind.annotation.RestController;
 
+import microservices.cloud.service.utile.ServiceUtileApplication;
 import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @EnableZuulProxy
@@ -29,6 +30,7 @@ public class ZuulServerApplication {
 	public static void main(String[] args) throws BeansException, IOException {
 		
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ServiceUtileApplication.class)
 				.sources(ZuulServerApplication.class)
 				.web(WebApplicationType.SERVLET)
 				.listeners(new ApplicationPidFileWriter())

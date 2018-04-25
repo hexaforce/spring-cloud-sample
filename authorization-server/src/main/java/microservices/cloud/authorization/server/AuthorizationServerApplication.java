@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import microservices.cloud.service.utile.ServiceUtileApplication;
 import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @Configuration
@@ -26,6 +27,7 @@ public class AuthorizationServerApplication implements WebMvcConfigurer {
 	public static void main(String[] args) throws BeansException, IOException {
 		
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+				.sources(ServiceUtileApplication.class)
 				.sources(AuthorizationServerApplication.class)
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
