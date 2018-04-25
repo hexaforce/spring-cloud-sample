@@ -11,7 +11,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import microservices.cloud.service.utile.ServiceUtileApplication;
-import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @EnableDiscoveryClient
 @EnableConfigServer
@@ -19,16 +18,14 @@ import microservices.cloud.service.utile.StartupCompleteEvent;
 public class ConfigurationServerApplication {
 
 	public static void main(String[] args) throws BeansException, IOException {
-		
+
 		ConfigurableApplicationContext context = new SpringApplicationBuilder()
 				.sources(ServiceUtileApplication.class)
 				.sources(ConfigurationServerApplication.class)
-				.listeners(new ApplicationPidFileWriter())
-				.run(args);
-		
+				.listeners(new ApplicationPidFileWriter()).run(args);
+
 		context.getBean(StartupCompleteEvent.class).onComplete(context);
-		
+
 	}
-	
-	
+
 }
