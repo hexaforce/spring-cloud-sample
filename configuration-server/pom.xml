@@ -12,11 +12,6 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>microservices.cloud</groupId>
-			<artifactId>service-utile</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
@@ -55,6 +50,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<skip>false</skip>
+					<fork>true</fork>
 				</configuration>
 			</plugin>
 		</plugins>
