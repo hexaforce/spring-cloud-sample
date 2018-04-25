@@ -9,11 +9,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
-@ComponentScan
+@Component
 public class StartupCompleteEvent {
 
 	public void onComplete(ConfigurableApplicationContext context) throws IOException {
