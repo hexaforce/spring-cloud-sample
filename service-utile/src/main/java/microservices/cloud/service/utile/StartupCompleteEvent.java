@@ -9,10 +9,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 public class StartupCompleteEvent {
+	
+	@Bean
+	public StartupCompleteEvent startupCompleteEvent() {
+		return new StartupCompleteEvent();
+	}
 
 	public void onComplete(ConfigurableApplicationContext context) throws IOException {
 		
