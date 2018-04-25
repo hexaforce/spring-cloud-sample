@@ -55,7 +55,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<skip>false</skip>
-					<fork>true</fork>
 				</configuration>
 			</plugin>
 		</plugins>
