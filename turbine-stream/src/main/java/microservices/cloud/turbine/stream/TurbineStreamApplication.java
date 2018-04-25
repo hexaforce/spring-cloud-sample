@@ -13,6 +13,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.StandardEnvironment;
 
+import microservices.cloud.service.utile.StartupCompleteEvent;
+
 @Configuration
 @EnableAutoConfiguration
 @EnableTurbineStream
@@ -32,7 +34,7 @@ public class TurbineStreamApplication {
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
 		
-		context.getBean(StartupCompleteEvent.class).onComplete();
+		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}
 

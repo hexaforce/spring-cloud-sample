@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import microservices.cloud.service.utile.StartupCompleteEvent;
+
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
@@ -28,7 +30,7 @@ public class AuthorizationServerApplication implements WebMvcConfigurer {
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
 		
-		context.getBean(StartupCompleteEvent.class).onComplete();
+		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}
 

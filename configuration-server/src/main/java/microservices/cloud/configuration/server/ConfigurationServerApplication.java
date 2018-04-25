@@ -10,6 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import microservices.cloud.service.utile.StartupCompleteEvent;
+
 @EnableDiscoveryClient
 @EnableConfigServer
 @SpringBootApplication
@@ -22,7 +24,7 @@ public class ConfigurationServerApplication {
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
 		
-		context.getBean(StartupCompleteEvent.class).onComplete();
+		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}
 	

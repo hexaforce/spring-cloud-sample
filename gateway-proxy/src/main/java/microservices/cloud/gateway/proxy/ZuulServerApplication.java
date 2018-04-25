@@ -19,6 +19,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.bind.annotation.RestController;
 
+import microservices.cloud.service.utile.StartupCompleteEvent;
+
 @EnableZuulProxy
 @RestController
 @SpringBootApplication
@@ -32,7 +34,7 @@ public class ZuulServerApplication {
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
 		
-		context.getBean(StartupCompleteEvent.class).onComplete();
+		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}
 

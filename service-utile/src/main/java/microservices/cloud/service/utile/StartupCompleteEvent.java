@@ -1,4 +1,4 @@
-package microservices.cloud.gateway.proxy;
+package microservices.cloud.service.utile;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,6 +8,7 @@ import java.io.Writer;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class StartupCompleteEvent {
 
-	public void onComplete() throws IOException {
+	public void onComplete(ConfigurableApplicationContext context) throws IOException {
 		
 		File file = new File(System.getProperty("user.dir") + File.separator, ".startup");
 
@@ -24,6 +25,8 @@ public class StartupCompleteEvent {
 		file.deleteOnExit();
 
 		Writer writer = new OutputStreamWriter(new FileOutputStream(file));
+		
+		//environment.getSystemProperties().keySet().forEach(key -> environment.getProperty(key));
 		writer.write(LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
 
 		writer.close();
