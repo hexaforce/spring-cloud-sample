@@ -24,7 +24,7 @@ public class ConfigurationServerApplication {
 				.sources(ConfigurationServerApplication.class)
 				.listeners(new ApplicationPidFileWriter()).run(args);
 
-		context.getBean(StartupCompleteEvent.class).onComplete(context);
+		context.getBean(StartupCompleteEvent.class).onComplete();
 
 	}
 

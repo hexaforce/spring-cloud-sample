@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class StartupCompleteEvent {
 
-	public void onComplete(ConfigurableApplicationContext context) throws IOException {
+	public void onComplete() throws IOException {
 		
 		File file = new File(System.getProperty("user.dir") + File.separator, ".startup");
 
