@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<prerequisites>
 		<maven>3.5.2</maven>
 	</prerequisites>
-	
+
 	<groupId>microservices.cloud</groupId>
 	<artifactId>spring</artifactId>
 	<packaging>pom</packaging>
@@ -27,9 +29,9 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		
+
 		<spring-cloud-version>Finchley.M9</spring-cloud-version>
-				
+
 		<docker.image.prefix>hexaforce</docker.image.prefix>
 	</properties>
 
@@ -102,7 +104,8 @@
 						<configuration>
 							<imageName>${project.artifactId}</imageName>
 							<baseImage>java:alpine</baseImage>
-							<!-- copy the service's jar file from target into the root directory of the image -->
+							<!-- copy the service's jar file from target into the root directory 
+								of the image -->
 							<entryPoint>["java","-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom","-jar","/${project.build.finalName}.jar"]</entryPoint>
 							<resources>
 								<resource>

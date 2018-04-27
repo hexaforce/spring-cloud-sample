@@ -1,21 +1,17 @@
 server:
   port: 8888
 
-logging:
-  level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
-    
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    statusPageUrlPath: /admin/info
-    healthCheckUrlPath: /admin/health
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+encrypt:
+  key-store:
+    alias: config-server-key
+    location: classpath:/config-server.jks
+    password: my-s70r3-s3cr3t
+    secret: my-k34-s3cr3t
 spring:
+  security:
+    user:
+      name: root
+      password: s3cr3t
   rabbitmq:
     host: localhost
     port: 5672
