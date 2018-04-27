@@ -1,12 +1,5 @@
 server:
   port: 8888
-
-encrypt:
-  key-store:
-    alias: config-server-key
-    location: classpath:/config-server.jks
-    password: my-s70r3-s3cr3t
-    secret: my-k34-s3cr3t
 spring:
   security:
     user:
