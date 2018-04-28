@@ -4,13 +4,13 @@
 	<servers>
 		<server>
 			<id>aws-snapshot</id>
-			<username>XXX Access key ID XXX</username>
-			<password>xxxxxxxxxx Secret access key xxxxxxxxxx</password>
+			<username>AKIAI542BWRU5FGDLJLQ</username>
+			<password>/imlOK2JoSLKA/DSWk3ipCZvNfrkjPEUexr9Y/Lg</password>
 		</server>
 		<server>
 			<id>aws-release</id>
-			<username>XXX Access key ID XXX</username>
-			<password>xxxxxxxxxx Secret access key xxxxxxxxxx</password>
+			<username>AKIAI542BWRU5FGDLJLQ</username>
+			<password>/imlOK2JoSLKA/DSWk3ipCZvNfrkjPEUexr9Y/Lg</password>
 		</server>
 	</servers>
 
