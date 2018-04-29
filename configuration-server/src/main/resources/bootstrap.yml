@@ -1,20 +1,9 @@
 spring:
   application:
     name: config-server
-#encrypt:
-#  key-store:
-#    alias: config-server-key
-#    location: classpath:/config-server.jks
-#    password: my-s70r3-s3cr3t
-#    secret: my-k34-s3cr3t
-#encrypt:
-#  fail-on-error: false
-#  key-store:
-#    location: classpath:keystore.jks
-#    password: 
-#    password: ${KEYSTORE_PASSWORD:foobar} # don't use a default in production
-#    alias: test
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+encrypt:
+  fail-on-error: false
+  key-store:
+    location: classpath:keystore.jks
+    password: ${KEYSTORE_PASSWORD:foobar} # don't use a default in production
+    alias: test

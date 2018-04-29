@@ -1,12 +1,14 @@
+info:
+  component: Eureka Server
 server:
   port: 8761
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    register-with-eureka: false
+    fetch-registry: false
   server:
     # Disable self-preservation during development, see https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication
-    enableSelfPreservation: false
+    enable-self-preservation: false
     
-    waitTimeInMsWhenSyncEmpty: 0
+    wait-time-in-ms-when-sync-empty: 0

@@ -1,14 +1,16 @@
 info:
   component: Zuul Server
-
+server:
+  port: 8765
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 zuul:
   routes:
     stores: /stores/**
     customers: /customers/**
     zuulserver: /self/**
-
-server:
-  port: 8765
 
 logging:
   level:
