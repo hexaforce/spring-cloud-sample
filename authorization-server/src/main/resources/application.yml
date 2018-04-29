@@ -1,4 +1,6 @@
 spring:
+  session:
+    store-type: redis
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: 'jdbc:mysql://localhost:3306/authentication?useSSL=false&useUnicode=true&characterEncoding=utf8'
@@ -8,3 +10,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: validate
+server:
+  address: 127.0.0.1
+  port: 9000

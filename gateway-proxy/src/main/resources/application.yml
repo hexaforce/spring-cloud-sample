@@ -6,13 +6,19 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+security:
+  user:
+    password: password
+  ignored:
+  - "*.bundle.*"
+spring:
+  session:
+    store-type: redis
 zuul:
   routes:
-    stores: /stores/**
-    customers: /customers/**
-    zuulserver: /self/**
-
-logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
+    resource:
+      path: /resource/**
+      url: http://localhost:8765
+      sensitive-headers:
+    
