@@ -29,25 +29,24 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<spring-cloud-version>Finchley.M9</spring-cloud-version>
 		<docker.image.prefix>hexaforce</docker.image.prefix>
 	</properties>
 
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-devtools</artifactId> -->
-<!-- 			<optional>true</optional> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>net.logstash.logback</groupId> -->
-<!-- 			<artifactId>logstash-logback-encoder</artifactId> -->
-<!-- 			<version>5.0</version> -->
-<!-- 		</dependency> -->
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter</artifactId>
-			</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-devtools</artifactId> -->
+		<!-- <optional>true</optional> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>net.logstash.logback</groupId> -->
+		<!-- <artifactId>logstash-logback-encoder</artifactId> -->
+		<!-- <version>5.0</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -169,7 +168,14 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-parent</artifactId>
-				<version>${spring-cloud-version}</version>
+				<version>Finchley.M9</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-bom</artifactId>
+				<version>5.0.4.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

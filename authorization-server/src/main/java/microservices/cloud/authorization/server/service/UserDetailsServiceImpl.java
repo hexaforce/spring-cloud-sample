@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import microservices.cloud.authorization.server.dao.User;
 import microservices.cloud.authorization.server.dao.UserDetailsDao;
-import microservices.cloud.authorization.server.model.User;
 
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {

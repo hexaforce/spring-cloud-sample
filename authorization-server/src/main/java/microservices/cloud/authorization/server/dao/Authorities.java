@@ -1,4 +1,4 @@
-package microservices.cloud.authorization.server.model;
+package microservices.cloud.authorization.server.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,15 +8,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AUTHORITIES")
+@Table(name = "authorities")
 public class Authorities {
 	
 	@Id
-	@Column(name = "AUTHORITY")
+	@Column(name = "authority")
 	private String authority;
 
 	@ManyToOne
-	@JoinColumn(name = "USERNAME")
+	@JoinColumn(name = "username")
 	private User user;
 
 	public String getAuthority() {

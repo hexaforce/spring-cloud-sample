@@ -1,4 +1,4 @@
-package microservices.cloud.authorization.server.model;
+package microservices.cloud.authorization.server.dao;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,17 +11,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User {
 	
 	@Id
-	@Column(name = "USERNAME")
+	@Column(name = "username")
 	private String username;
 
-	@Column(name = "PASSWORD", nullable = false)
+	@Column(name = "password", nullable = false)
 	private String password;
 
-	@Column(name = "ENABLED", nullable = false)
+	@Column(name = "enabled", nullable = false)
 	private boolean enabled;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")

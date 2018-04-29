@@ -38,6 +38,9 @@ docker run -it -d -p 5601:5601 hexaforce/kibana
 docker push hexaforce/kibana
 docker push hexaforce/elasticsearch
 
+# MySQL
+sudo docker run --name mysql-server -it -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:5
+
 ## Exited
 docker commit -m "exited" XXXXXXXXXXXXX  
 
