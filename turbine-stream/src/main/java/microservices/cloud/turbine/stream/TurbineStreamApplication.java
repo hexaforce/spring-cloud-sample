@@ -29,13 +29,11 @@ public class TurbineStreamApplication {
 		WebApplicationType webApplicationType = 
 				cloudEnvironment ? WebApplicationType.SERVLET : WebApplicationType.NONE;
 		
-		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(TurbineStreamApplication.class)
 				.sources(ServiceUtileApplication.class)
-				.sources(TurbineStreamApplication.class)
 				.web(webApplicationType)
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
-		
 		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}

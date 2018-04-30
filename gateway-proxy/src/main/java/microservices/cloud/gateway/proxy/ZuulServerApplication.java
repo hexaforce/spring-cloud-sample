@@ -41,13 +41,11 @@ public class ZuulServerApplication {
 
     public static void main(String[] args) throws BeansException, IOException {
     	
-		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(ZuulServerApplication.class)
 				.sources(ServiceUtileApplication.class)
-				.sources(ZuulServerApplication.class)
 				.web(WebApplicationType.SERVLET)
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);
-		
 		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
     }

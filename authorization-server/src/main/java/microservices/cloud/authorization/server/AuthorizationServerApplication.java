@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import microservices.cloud.service.utile.ServiceUtileApplication;
 import microservices.cloud.service.utile.StartupCompleteEvent;
 
 @SpringBootApplication
@@ -31,9 +32,10 @@ public class AuthorizationServerApplication extends WebSecurityConfigurerAdapter
 
 	public static void main(String[] args) throws BeansException, IOException {
 		
-		ConfigurableApplicationContext context = new SpringApplicationBuilder()
-				.sources(AuthorizationServerApplication.class).sources(AuthorizationServerApplication.class)
-				.listeners(new ApplicationPidFileWriter()).run(args);
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(AuthorizationServerApplication.class)
+				.sources(ServiceUtileApplication.class)
+				.listeners(new ApplicationPidFileWriter())
+				.run(args);
 		context.getBean(StartupCompleteEvent.class).onComplete(context);
 		
 	}
