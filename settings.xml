@@ -1,4 +1,5 @@
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
 
 	<servers>
@@ -11,6 +12,14 @@
 			<id>aws-release</id>
 			<username>XXX Access key ID XXX</username>
 			<password>xxxxxxxxxx Secret access key xxxxxxxxxx</password>
+		</server>
+		<server>
+			<id>docker-hub</id>
+			<username>hexaforce</username>
+			<password>password</password>
+			<configuration>
+				<email>tantaka.tomokazu@gmail.com</email>
+			</configuration>
 		</server>
 	</servers>
 
