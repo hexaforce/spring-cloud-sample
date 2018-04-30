@@ -52,3 +52,22 @@ mvn clean install deploy -DaltDeploymentRepository=aws-snapshot::default::s3://m
 
 mvn clean install deploy -DaltDeploymentRepository=aws-snapshot::default::s3://microservice.hexaforce.io/snapshot -N
 
+
+cd /root/spring-cloud-sample/configuration-server; mvn clean package docker:build -P docker
+cd /root/spring-cloud-sample/service-discovery;    mvn clean package docker:build -P docker
+cd /root/spring-cloud-sample/gateway-proxy;        mvn clean package docker:build -P docker
+cd /root/spring-cloud-sample/authorization-server; mvn clean package docker:build -P docker
+cd /root/spring-cloud-sample/hystrix-dashboard;    mvn clean package docker:build -P docker
+cd /root/spring-cloud-sample/turbine-stream;       mvn clean package docker:build -P docker
+
+cd /root/spring-cloud-sample/configuration-server; mvn dockerfile:build -P docker
+cd /root/spring-cloud-sample/service-discovery;    mvn dockerfile:build -P docker
+cd /root/spring-cloud-sample/gateway-proxy;        mvn dockerfile:build -P docker
+cd /root/spring-cloud-sample/authorization-server; mvn dockerfile:build -P docker
+cd /root/spring-cloud-sample/hystrix-dashboard;    mvn dockerfile:build -P docker
+cd /root/spring-cloud-sample/turbine-stream;       mvn dockerfile:build -P docker
+
+
+
+
+

@@ -117,8 +117,7 @@
 						<configuration>
 							<imageName>${project.artifactId}</imageName>
 							<baseImage>java:alpine</baseImage>
-							<!-- copy the service's jar file from target into the root directory 
-								of the image -->
+							<!-- copy the service's jar file from target into the root directory of the image -->
 							<entryPoint>["java","-Dspring.profiles.active=docker","-Djava.security.egd=file:/dev/./urandom","-jar","/${project.build.finalName}.jar"]</entryPoint>
 							<resources>
 								<resource>
@@ -153,6 +152,7 @@
 							<execution>
 								<id>default</id>
 								<goals>
+									<goal>build</goal>
 									<goal>push</goal>
 								</goals>
 							</execution>
