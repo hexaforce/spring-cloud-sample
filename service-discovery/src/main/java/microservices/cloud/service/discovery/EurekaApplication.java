@@ -16,9 +16,8 @@ public class EurekaApplication {
 
 	public static void main(String[] args) throws Exception {
 		
-		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(EurekaApplication.class)
 				.sources(ServiceUtileApplication.class)
-				.sources(EurekaApplication.class)
 				.web(WebApplicationType.SERVLET)
 				.listeners(new ApplicationPidFileWriter())
 				.run(args);

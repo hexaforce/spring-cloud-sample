@@ -67,6 +67,7 @@ public class ZuulServerApplication {
                     .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
             // @formatter:on
         }
+        
     }
 
 }

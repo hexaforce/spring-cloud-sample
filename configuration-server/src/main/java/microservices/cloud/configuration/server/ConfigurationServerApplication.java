@@ -22,10 +22,10 @@ public class ConfigurationServerApplication {
 
 	public static void main(String[] args) throws BeansException, IOException {
 
-		ConfigurableApplicationContext context = new SpringApplicationBuilder()
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(ConfigurationServerApplication.class)
 				.sources(ServiceUtileApplication.class)
-				.sources(ConfigurationServerApplication.class)
-				.listeners(new ApplicationPidFileWriter()).run(args);
+				.listeners(new ApplicationPidFileWriter())
+				.run(args);
 
 		context.getBean(StartupCompleteEvent.class).onComplete(context);
 
