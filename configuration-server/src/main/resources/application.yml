@@ -1,3 +1,5 @@
+info:
+  component: Config Server
 server:
   port: 8888
 spring:

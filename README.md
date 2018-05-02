@@ -14,7 +14,8 @@ ZuulServer:8765
 
 Zipkin:9411
 
-AuthServer:8080
+AuthServer:9000
+
 
 # Docker  
 
@@ -30,7 +31,7 @@ docker build
 
 * Push  
 docker login
-docker push xxxxx/xxxxxxx
+docker push xxxxx/xxxxxxx  
 
 * Run  
 docker-compose up

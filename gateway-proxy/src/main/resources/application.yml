@@ -6,15 +6,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
-security:
-  user:
-    password: password
-  ignored:
-  - "*.bundle.*"
 spring:
   session:
     store-type: redis
+  security:
+    user:
+      password: password
+#    ignored: "*.bundle.*"
 zuul:
   routes:
     resource:
