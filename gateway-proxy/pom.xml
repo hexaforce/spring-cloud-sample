@@ -100,12 +100,12 @@
 						<nodeVersion>v8.10.0</nodeVersion>
 				</configuration>
 				<executions>
-					<execution>
-						<id>install-npm</id>
-						<goals>
-							<goal>install-node-and-npm</goal>
-						</goals>
-					</execution>
+<!-- 					<execution> -->
+<!-- 						<id>install-npm</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>install-node-and-npm</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
 					<execution>
 						<id>npm-install</id>
 						<goals>
