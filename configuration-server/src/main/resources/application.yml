@@ -16,9 +16,9 @@ spring:
           basedir: target/config
 eureka:
   instance:
-    leaseRenewalIntervalInSeconds: 10
-    statusPageUrlPath: /admin/info
-    healthCheckUrlPath: /admin/health
+    lease-renewal-interval-in-seconds: 10
+    status-page-url-path: /admin/info
+    health-check-url-path: /admin/health
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/

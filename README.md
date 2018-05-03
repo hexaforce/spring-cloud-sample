@@ -19,33 +19,33 @@ AuthServer:9000
 
 # Docker  
 
-* All Stop
+* All Stop  
 docker stop $(docker ps -a -q)  
-* All Remove
+* All Remove  
 docker rm $(docker ps -a -q)  
-* All Image Remove
+* All Image Remove  
 docker rmi $(docker images -a -q)  
 
 * Build  
-docker build
+docker build  
 
 * Push  
-docker login
+docker login  
 docker push xxxxx/xxxxxxx  
 
 * Run  
-docker-compose up
+docker-compose up  
 
 ## Docker Image Debug  
 
 docker commit -m "exited" XXXXXXXXXXXXX  
 docker run --rm -it XXXXXXXXXXXXXXXXXXXXXXXXXX bash  
 
-## Docker Container Link Debug 
+## Docker Container Link Debug  
 
 docker network inspect bridge  
 
-# Nodejs
+# Nodejs  
 
 
 
@@ -67,7 +67,7 @@ docker run -it -d -p 6379:6379 --hostname redis --name redis-server redis:3-alpi
 
 # MongoDB  
 
-docker run -it -d --hostname mongo --name mongo-server -d -p 27017:27017 -p 28017:28017 mongo:jessie
+docker run -it -d --hostname mongo --name mongo-server -d -p 27017:27017 -p 28017:28017 mongo:jessie  
 
 # ELK Stack (Elasticsearch/Logstash/Kibana)  
 
@@ -77,21 +77,21 @@ docker-compose up
 
 # Zipkin  
 
-* Image run
-docker run -d -p 9411:9411 openzipkin/zipkin
+* Image run  
+docker run -d -p 9411:9411 openzipkin/zipkin  
 
-* Code to Run
+* Code to Run  
 git clone https://github.com/openzipkin/docker-zipkin.git  
 cd docker-zipkin  
-docker-compose up
+docker-compose up  
 
 # Jenkins  
 
-* Jenkins on ubuntu
-wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt-get update
-sudo apt-get install jenkins
+* Jenkins on ubuntu  
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -  
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'  
+sudo apt-get update  
+sudo apt-get install jenkins  
 
 # Sonarqube  
 
@@ -99,13 +99,13 @@ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube:alpine
 
 # Maven 
 
-* Maven S3 Deploy
+* Maven S3 Deploy  
 mvn clean install deploy -DaltDeploymentRepository=aws-snapshot::default::s3://microservice.hexaforce.io/snapshot  
 
-* Maven S3 Deploy(Parent POM only)
+* Maven S3 Deploy(Parent POM only)  
 mvn clean install deploy -N -DaltDeploymentRepository=aws-snapshot::default::s3://microservice.hexaforce.io/snapshot  
 
-* Maven S3 Deploy(Deploy whit Force Update)
+* Maven S3 Deploy(Deploy whit Force Update)  
 mvn clean install deploy -U -DaltDeploymentRepository=aws-snapshot::default::s3://microservice.hexaforce.io/snapshot  
 
 * Maven Docker Build
