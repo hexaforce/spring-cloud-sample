@@ -4,10 +4,7 @@ target/
 *.log
 *.pid
 *.log
-### Nodejs ###
-node/
-node_modules/
-package-lock.json
+
 ### STS ###
 .apt_generated
 .classpath
@@ -15,11 +12,13 @@ package-lock.json
 .project
 .settings
 .springBeans
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
 ### NetBeans ###
 nbproject/private/
 build/
