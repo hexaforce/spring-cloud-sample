@@ -4,13 +4,14 @@
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 	
-<!-- 	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender"> -->
-<!-- 		<destination>127.0.0.1:9600</destination> -->
-<!-- 		<encoder class="net.logstash.logback.encoder.LogstashEncoder" /> -->
-<!-- 	</appender> -->
+	
+	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>127.0.0.1:9600</destination>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
 
-<!-- 	<root level="DEBUG"> -->
-<!-- 		<appender-ref ref="stash" /> -->
-<!-- 	</root> -->
+	<root level="INFO">
+		<appender-ref ref="stash" />
+	</root>
 
 </configuration>
